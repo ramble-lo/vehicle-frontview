@@ -1,0 +1,77 @@
+$blue-color: rgba(0, 127, 255, .2);
+$red-color: rgba(239, 1, 7, .2);
+$transparent-color:rgba(0, 0, 0, 0);
+
+@mixin screen {
+    position: fixed;
+    z-index: 2;
+    width: 100vw;
+    height: 1200px;
+    box-sizing: border-box;
+    transition: background-color .4s ease-in-out;
+}
+
+h1,
+h2,
+button,
+td {
+    font-family: 'Roboto Mono';
+}
+
+.App {
+    padding-bottom: 30px;
+
+    h1 {
+        padding: 0 15px;
+    }
+
+    h2 {
+        padding: 0 15px;
+    }
+
+    button {
+        display: block;
+        padding: 10px;
+        margin: 15px 15px;
+        border: 1px solid rgba(0, 0, 0, .2);
+        background-color: #fff;
+        outline: none;
+    }
+}
+
+.front-view {
+    width: 100vw;
+
+    video {
+        width: 100vw;
+        height: auto;
+    }
+
+    .screen {
+        @include screen;
+    }
+
+    .alert-screen {
+        // background-image: linear-gradient(to right, $red-color, $transparent-color, $red-color);
+        background-color: $red-color;
+    }
+
+    .start-screen {
+        // background-image: linear-gradient(to right, $blue-color, $transparent-color, $blue-color);
+        background-color: $blue-color;
+    }
+}
+
+.timestamp {
+    padding: 0 15px;
+
+    td {
+        padding: 0 10px;
+        border-right: 1px solid black;
+    }
+
+    p {
+        padding: 0 15px;
+        display: inline-block;
+    }
+}
